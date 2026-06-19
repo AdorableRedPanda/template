@@ -16,9 +16,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      VITE_INSTANT_APP_ID: ${{ vars.VITE_INSTANT_APP_ID }}
-      VITE_DEFAULT_COLLECTION: ${{ vars.VITE_DEFAULT_COLLECTION }}
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
