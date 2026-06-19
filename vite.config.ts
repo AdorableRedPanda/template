@@ -5,9 +5,8 @@ import { fileURLToPath } from 'node:url';
 
 const rootDir = dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
-    base: '/',
-    root: './src',
-    publicDir: '../public',
+    base: '',
+    publicDir: './public',
     plugins: [react()],
     build: {
         outDir: '../dist',
