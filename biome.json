@@ -1,0 +1,39 @@
+{
+	"css": {
+		"parser": {
+			"tailwindDirectives": true,
+			"cssModules": true
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single"
+		}
+	},
+	"linter": {
+		"rules": {
+			"suspicious": {
+				"noUnknownAtRules": "off"
+			},
+			"style": {
+				"noEnum": "error"
+			},
+			"complexity": {
+				"noForEach": "off",
+				"noExcessiveLinesPerFunction": {
+					"level": "error",
+					"options": {
+						"maxLines": 40
+					}
+				}
+			},
+			"correctness": {
+				"noUnusedImports": "error",
+				"useExhaustiveDependencies": "off"
+			},
+			"a11y": {
+				"noAutofocus": "off"
+			}
+		}
+	}
+}
