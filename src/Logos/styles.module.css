@@ -1,0 +1,51 @@
+.logos {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	margin-bottom: 2rem;
+
+	.logo {
+		height: 6em;
+		width: 6em;
+		padding: 1em;
+		will-change: filter;
+		transition: filter 0.3s;
+
+		&.vite {
+			&:hover {
+				filter: drop-shadow(0 0 2em rgba(144, 100, 255, 0.67));
+			}
+		}
+
+		&.bun {
+			transform: scale(1.2);
+			&:hover {
+				filter: drop-shadow(0 0 2em #646cffaa);
+			}
+		}
+
+		&.react {
+			animation: spin 20s linear infinite;
+
+			&:hover {
+				filter: drop-shadow(0 0 2em #61dafbaa);
+			}
+		}
+
+		&.ts {
+			&:hover {
+				filter: drop-shadow(0 0 2em rgba(0, 73, 255, 0.67));
+			}
+		}
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
