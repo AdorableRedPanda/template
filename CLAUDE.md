@@ -40,6 +40,20 @@ A component is a folder with an `index.ts`. All public exports go through the in
 - Imported in exactly one component file
 - CSS classes needed by child components are passed as props
 - Never import styles from another module
+- Use snake_case for class names
+- import styles with `import css from './styles.module.css';`
+- use `clsJoin` util for class names concatenation
+
+```ts
+// utils/clsJoin.ts
+type Classname = boolean | null | string | undefined;
+export const clsJoin = (...classes: Classname[]) =>
+	classes.filter(Boolean).join(' ');
+
+// button component body
+const className = clsJoin(css.button, danger && css.danger)
+```
+
 
 ### Exports
 
@@ -86,11 +100,15 @@ Resolve ambiguity at the parent level, not inside the component.
 
 ```tsx
 // ❌ component decides what to render
-const Button = ({ icon, label }) => icon ? <...> : <...>;
+interface Props {
+  icon?: JSX.Element;
+  label: string;
+}
+const IconOrLabelButton: React.FC<Props> = ({ icon, label }) => icon ? <...> : <...>;
 
 // ✅ parent decides upfront
-if (isIcon(value)) return <IconButton icon={value} />;
-return <LabelButton label={value} />;
+if (icon) return <IconButton icon={icon} />;
+return <LabelButton label={label} />;
 ```
 
 ### children
