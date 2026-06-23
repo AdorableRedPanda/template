@@ -93,6 +93,7 @@ function handleNext(prev: number) {
 
 - All optional props must have a non-null default value
 - If a default is hard to provide — it's a signal to reconsider the decomposition
+- Don't use anonymous types in component definition, use React.FC generic to describe params
 
 ### Variability
 
